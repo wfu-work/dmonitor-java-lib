@@ -1,6 +1,5 @@
 package com.navfirst.dmonitor.lib.exceptions;
 
-import com.navfirst.dmonitor.lib.enums.ExceptionEnum;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
@@ -19,10 +18,6 @@ public class RtkconvException extends RuntimeException {
 
     private String msg;
 
-    public static RtkconvException of (ExceptionEnum resultEnum) {
-        return new RtkconvException(resultEnum);
-    }
-
     public RtkconvException(String msg) {
         super(msg);
         this.msg = msg;
@@ -31,12 +26,6 @@ public class RtkconvException extends RuntimeException {
     public RtkconvException(Exception e) {
         super(e);
         this.msg = e.getMessage();
-    }
-
-    public RtkconvException(ExceptionEnum resultEnum) {
-        super(resultEnum.getMsg());
-        this.msg = resultEnum.getMsg();
-        this.code = resultEnum.getCode();
     }
 
 }

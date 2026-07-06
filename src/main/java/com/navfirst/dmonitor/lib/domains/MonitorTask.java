@@ -12,23 +12,6 @@ import java.io.Serializable;
  * 创建：馥溪凝
  * 日期：2022/04/09 15:23
  * 描述：com.navfirst.dmonitor.lib.domains
- * 准实时模式，不传入广播星历文件，监测站名0， 基准站名 1，解算时长1小时，解算间隔5min，动态模式
- * file mode       : 1-rtcm3; 2-rinex
- */
-/* time start */
-/* time end */
-/* sample */
-/* ref station is VRS mode  : 0-false; 1:true */
-/* rover file name */
-/* base file name */
-/* files directory */
-/* filename extension */
-/* broadcast file full name */
-/* configure file full name(static.conf)
-
- * 1@1@@@3600@300@15@2@0@1@/data/rtcm/@
- * 3@1@2023/04/05 16:30:00@2023/04/05 20:30:00@15@0@X213PCCA1732@X213PCCA1729@/data/rtcm/@@@/data/static_platform.conf
- * rtMode@fileMode@timeStart@timeEndt@sample@vrs@roverName@baseName@dir@@brdcFile@conf
  */
 @Data
 @Builder
@@ -46,12 +29,12 @@ public class MonitorTask implements Serializable {
     private int rtMode = 3;
 
     /**
-     * 开始时间
+     * 开始时间 格式2026/05/20 00:00:00
      */
     private String timeStart;
 
     /**
-     * 结束时间
+     * 结束时间 格式2026/05/20 01:00:00
      */
     private String timeEnd;
 
@@ -66,7 +49,7 @@ public class MonitorTask implements Serializable {
     private Integer processInterval;
 
     /**
-     * 采样频率
+     * 采样频率默认不写 算法会自动估算频率
      */
     private Integer sample;
 
@@ -104,7 +87,8 @@ public class MonitorTask implements Serializable {
     /**
      * 输出结果：0-历元解 1-单一解
      */
-    private int outMode;
+    @Builder.Default
+    private int outMode = 1;
 
     /**
      * 输出解算结果文件
