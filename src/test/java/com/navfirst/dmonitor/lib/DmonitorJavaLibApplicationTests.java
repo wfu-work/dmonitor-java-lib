@@ -19,10 +19,10 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 class DmonitorJavaLibApplicationTests {
 
-    private static final Path BRDC_PATH = Path.of("/Users/wfu/Downloads/BRDM1400.rnx");
-    private static final Path ROVER_PATH = Path.of("/Users/wfu/Downloads/raw/2026/140/00/XPJZ01.2026140binRTCM3");
-    private static final Path BASE_PATH = Path.of("/Users/wfu/Downloads/raw/2026/140/00/XPJZ02.2026140binRTCM3");
-    private static final String LICENSE_PATH = "/Users/wfu/Downloads/license-mini.lic";
+    private static final Path BRDC_PATH = Path.of("/Users/wfu/Downloads/GSSK01.2026210binRTCM3");
+    private static final Path ROVER_PATH = Path.of("/Users/wfu/Downloads/GSSK01.2026210binRTCM3");
+    private static final Path BASE_PATH = Path.of("/Users/wfu/Downloads/GSSK01.2026210binRTCM3");
+    private static final String LICENSE_PATH = "/Users/wfu/Downloads/license.lic";
 
     private final MonitorService monitorService;
 
@@ -48,14 +48,14 @@ class DmonitorJavaLibApplicationTests {
         byte[] brdcBytes = Files.isRegularFile(BRDC_PATH) ? Files.readAllBytes(BRDC_PATH) : null;
         MonitorTask monitorTask = MonitorTask.builder()
                 .rtMode(3)
-                .timeStart("2026/05/20 00:00:00")
-                .timeEnd("2026/05/20 01:00:00")
+                .timeStart("2026/07/29 04:00:00")
+                .timeEnd("2026/07/29 05:00:00")
                 .sample(0)
                 .vrs(0)
                 .filterPeriod(7200)
                 .processInterval(600)
-                .roverName("XPJZ01")
-                .baseName("XPJZ02")
+                .roverName("GSSK01")
+                .baseName("GSSK01")
                 .brdcBytes(brdcBytes)
                 .roverBytes(Files.readAllBytes(ROVER_PATH))
                 .baseBytes(Files.readAllBytes(BASE_PATH))
