@@ -1,0 +1,63 @@
+License info：[uuid]:[UUID REDACTED], [endTime]:1796025259000
+2026/09/10 12:16:33 monitor stream info: mode=3 start=[2026 9 6 13 0 0] end=[2026 9 6 13 1 0] brdcBytes=781312 roverBytes=218990 baseBytes=224473 mInfoSize=1800
+2026/09/10 12:16:33 monitor data with error: 2026/09/06 13:00:00 2026/09/06 13:01:00 0.0389 0.0255 0.0180 0.0000 0.0000 0.0000 60.6718 21.7580 6.4354 Float 4 25 0 0 0 3 3  0  4 0.0s - expEpoch=    0.0000,nepoch_r=3
+reference station epoch rate less than 60
+expEpoch=    0.0000,nepoch_u=3
+monitoring station epoch rate less than 60
+fix-rate less 0.75
+2026/09/10 12:16:33 [monitor solbuf]: 2026/09/06 13:00:00 2026/09/06 13:01:00 0.0389 0.0255 0.0180 0.0000 0.0000 0.0000 60.671800 21.758000 6.435400 Float 4 25 0 0 0 3 3 0 4 0.0s - expEpoch=    0.0000,nepoch_r=3
+reference station epoch rate less than 60
+expEpoch=    0.0000,nepoch_u=3
+monitoring station epoch rate less than 60
+fix-rate less 0.75
+12:16:33.488 [pool-1-thread-1] ERROR com.navfirst.dmonitor.lib.services.impl.MonitorDataServiceImpl -- 解算结果：2026/09/06 13:00:00 2026/09/06 13:01:00 0.0389 0.0255 0.0180 0.0000 0.0000 0.0000 60.671800 21.758000 6.435400 Float 4 25 0 0 0 3 3 0 4 0.0s
+License info：[uuid]:[UUID REDACTED], [endTime]:1796025259000
+2026/09/10 12:16:33 monitor stream info: mode=3 start=[2026 9 6 13 0 0] end=[2026 9 6 13 5 0] brdcBytes=781312 roverBytes=218990 baseBytes=224473 mInfoSize=1800
+2026/09/10 12:16:33 monitor data with error: 2026/09/06 13:00:00 2026/09/06 13:05:00 0.0433 0.0335 0.0100 0.7368 0.0000 0.0000 60.6911 21.5875 6.4214 Fixed 4 24 0 0 0 19 19  0  4 0.1s - expEpoch=    0.0000,nepoch_r=19
+reference station epoch rate less than 60
+expEpoch=    0.0000,nepoch_u=19
+monitoring station epoch rate less than 60
+fix-rate less 0.75
+2026/09/10 12:16:33 [monitor solbuf]: 2026/09/06 13:00:00 2026/09/06 13:05:00 0.0433 0.0335 0.0100 0.7368 0.0000 0.0000 60.691100 21.587500 6.421400 Fixed 4 24 0 0 0 19 19 0 4 0.1s - expEpoch=    0.0000,nepoch_r=19
+reference station epoch rate less than 60
+expEpoch=    0.0000,nepoch_u=19
+monitoring station epoch rate less than 60
+fix-rate less 0.75
+12:16:33.572 [pool-1-thread-1] ERROR com.navfirst.dmonitor.lib.services.impl.MonitorDataServiceImpl -- 解算结果：2026/09/06 13:00:00 2026/09/06 13:05:00 0.0433 0.0335 0.0100 0.7368 0.0000 0.0000 60.691100 21.587500 6.421400 Fixed 4 24 0 0 0 19 19 0 4 0.1s
+License info：[uuid]:[UUID REDACTED], [endTime]:1796025259000
+2026/09/10 12:16:33 monitor stream info: mode=3 start=[2026 9 6 13 0 0] end=[2026 9 6 13 15 0] brdcBytes=781312 roverBytes=218990 baseBytes=224473 mInfoSize=1800
+2026/09/10 12:16:33 monitor data with error: 2026/09/06 13:00:00 2026/09/06 13:15:00 0.0509 0.0329 0.0083 0.7119 0.9833 0.9833 60.6872 21.5899 6.4273 Fixed 3 24 0 15 15 59 59  0  4 0.4s - fix-rate less 0.75
+2026/09/10 12:16:33 [monitor solbuf]: 2026/09/06 13:00:00 2026/09/06 13:15:00 0.0509 0.0329 0.0083 0.7119 0.9833 0.9833 60.687200 21.589900 6.427300 Fixed 3 24 0 15 15 59 59 0 4 0.4s - fix-rate less 0.75
+12:16:33.984 [pool-1-thread-1] ERROR com.navfirst.dmonitor.lib.services.impl.MonitorDataServiceImpl -- 解算结果：2026/09/06 13:00:00 2026/09/06 13:15:00 0.0509 0.0329 0.0083 0.7119 0.9833 0.9833 60.687200 21.589900 6.427300 Fixed 3 24 0 15 15 59 59 0 4 0.4s
+License info：[uuid]:[UUID REDACTED], [endTime]:1796025259000
+2026/09/10 12:16:33 monitor stream info: mode=3 start=[2026 9 6 13 0 0] end=[2026 9 6 13 30 0] brdcBytes=781312 roverBytes=218990 baseBytes=224473 mInfoSize=1800
+2026/09/10 12:16:34 monitor data: 2026/09/06 13:00:00 2026/09/06 13:30:00 0.0673 0.0342 0.0088 0.8571 0.9917 0.9917 60.6875 21.5887 6.4259 Fixed 1 24 0 15 15 119 119  0  4 0.5s
+2026/09/10 12:16:34 [monitor solbuf]: 2026/09/06 13:00:00 2026/09/06 13:30:00 0.0673 0.0342 0.0088 0.8571 0.9917 0.9917 60.687500 21.588700 6.425900 Fixed 1 24 0 15 15 119 119 0 4 0.5s
+12:16:34.517 [pool-1-thread-1] ERROR com.navfirst.dmonitor.lib.services.impl.MonitorDataServiceImpl -- 解算结果：2026/09/06 13:00:00 2026/09/06 13:30:00 0.0673 0.0342 0.0088 0.8571 0.9917 0.9917 60.687500 21.588700 6.425900 Fixed 1 24 0 15 15 119 119 0 4 0.5s
+License info：[uuid]:[UUID REDACTED], [endTime]:1796025259000
+2026/09/10 12:16:34 monitor stream info: mode=3 start=[2026 9 6 13 0 0] end=[2026 9 6 14 0 0] brdcBytes=781312 roverBytes=218990 baseBytes=224473 mInfoSize=1800
+2026/09/10 12:16:35 monitor data: 2026/09/06 13:00:00 2026/09/06 14:00:00 0.0947 0.0377 0.0136 0.9076 0.9917 0.9917 60.6892 21.5883 6.4236 Fixed 1 25 0 15 15 238 238  0  0 1.3s
+2026/09/10 12:16:35 [monitor solbuf]: 2026/09/06 13:00:00 2026/09/06 14:00:00 0.0947 0.0377 0.0136 0.9076 0.9917 0.9917 60.689200 21.588300 6.423600 Fixed 1 25 0 15 15 238 238 0 0 1.3s
+12:16:35.821 [pool-1-thread-1] ERROR com.navfirst.dmonitor.lib.services.impl.MonitorDataServiceImpl -- 解算结果：2026/09/06 13:00:00 2026/09/06 14:00:00 0.0947 0.0377 0.0136 0.9076 0.9917 0.9917 60.689200 21.588300 6.423600 Fixed 1 25 0 15 15 238 238 0 0 1.3s
+2.0.6.8
+ 2026/09/06 13:00:00 2026/09/06 13:01:00 0.0389 0.0255 0.0180 0.0000 0.0000 0.0000 60.6718 21.7580 6.4354 Float 4 25 0 0 0 3 3  0  4 0.0s	
+expEpoch=    0.0000,nepoch_r=3
+reference station epoch rate less than 60
+expEpoch=    0.0000,nepoch_u=3
+monitoring station epoch rate less than 60
+fix-rate less 0.75
+	
+ 2026/09/06 13:00:00 2026/09/06 13:05:00 0.0433 0.0335 0.0100 0.7368 0.0000 0.0000 60.6911 21.5875 6.4214 Fixed 4 24 0 0 0 19 19  0  4 0.1s	
+expEpoch=    0.0000,nepoch_r=19
+reference station epoch rate less than 60
+expEpoch=    0.0000,nepoch_u=19
+monitoring station epoch rate less than 60
+fix-rate less 0.75
+	
+ 2026/09/06 13:00:00 2026/09/06 13:15:00 0.0509 0.0329 0.0083 0.7119 0.9833 0.9833 60.6872 21.5899 6.4273 Fixed 3 24 0 15 15 59 59  0  4 0.4s	
+fix-rate less 0.75
+	
+ 2026/09/06 13:00:00 2026/09/06 13:30:00 0.0673 0.0342 0.0088 0.8571 0.9917 0.9917 60.6875 21.5887 6.4259 Fixed 1 24 0 15 15 119 119  0  4 0.5s	
+	
+ 2026/09/06 13:00:00 2026/09/06 14:00:00 0.0947 0.0377 0.0136 0.9076 0.9917 0.9917 60.6892 21.5883 6.4236 Fixed 1 25 0 15 15 238 238  0  0 1.3s	
+	

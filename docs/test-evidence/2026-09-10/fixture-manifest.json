@@ -1,0 +1,828 @@
+[
+  {
+    "bytes": 2499996,
+    "sha256": "4939854d0517a5c7307352edc6a5e6aaf313e9af8e70385e02587c6568d80445",
+    "frames": 25738,
+    "crc_failures": 0,
+    "skipped_bytes": 0,
+    "trailing_bytes": 0,
+    "message_types": {
+      "1074": 3024,
+      "1084": 3023,
+      "1094": 3023,
+      "1114": 3023,
+      "1124": 3023,
+      "1005": 3023,
+      "1006": 3023,
+      "1033": 3023,
+      "1019": 326,
+      "1020": 202,
+      "1042": 420,
+      "1044": 58,
+      "1045": 272,
+      "1046": 275
+    },
+    "msm_epochs": {
+      "1074": {
+        "count": 3024,
+        "first_ms": 30000,
+        "last_ms": 45375000,
+        "intervals_ms": {
+          "15000": 3023
+        }
+      },
+      "1084": {
+        "count": 3023,
+        "first_ms": 10812000,
+        "last_ms": 56142000,
+        "intervals_ms": {
+          "15000": 3022
+        }
+      },
+      "1094": {
+        "count": 3023,
+        "first_ms": 30000,
+        "last_ms": 45360000,
+        "intervals_ms": {
+          "15000": 3022
+        }
+      },
+      "1114": {
+        "count": 3023,
+        "first_ms": 30000,
+        "last_ms": 45360000,
+        "intervals_ms": {
+          "15000": 3022
+        }
+      },
+      "1124": {
+        "count": 3023,
+        "first_ms": 16000,
+        "last_ms": 45346000,
+        "intervals_ms": {
+          "15000": 3022
+        }
+      }
+    },
+    "station_ids": [
+      0
+    ],
+    "ecef": [
+      [
+        -1936268.7794,
+        5104057.9877,
+        3287902.9041
+      ]
+    ],
+    "station": "PSYCMM0010",
+    "target_bytes": 2500000,
+    "path": "/Users/wfu/Documents/works/navfirst/code/nav-whu/dmonitor-java-lib/target/report-work/PSYCMM0010-2500000.rtcm3",
+    "sources": [
+      {
+        "path": "raw/2026/249/00/PSYCMM0010.2026249binRTCM3",
+        "bytes": 212784,
+        "sha256": "8b786962ce46b19da28bd0ad32b04b3e5955d005355c7bd922bc131e86f1cc3c"
+      },
+      {
+        "path": "raw/2026/249/01/PSYCMM0010.2026249binRTCM3",
+        "bytes": 212194,
+        "sha256": "5c3e8b268ecc26e850185be38297661fcda53baf3e06150bf13ef33cb4397c6e"
+      },
+      {
+        "path": "raw/2026/249/02/PSYCMM0010.2026249binRTCM3",
+        "bytes": 200772,
+        "sha256": "256a745eb407b8f0bf64303f8a13b4bfc15e805fc3a2f56473c2adab61a456f5"
+      },
+      {
+        "path": "raw/2026/249/03/PSYCMM0010.2026249binRTCM3",
+        "bytes": 207458,
+        "sha256": "515470ab102ef90032d164ee07f0d2d33dd8d6f1b6e8ea5751217f4901db51bb"
+      },
+      {
+        "path": "raw/2026/249/04/PSYCMM0010.2026249binRTCM3",
+        "bytes": 217140,
+        "sha256": "1927783e339a6931c8806b24f8b255d774309fd558b206bfab9e0cf991269378"
+      },
+      {
+        "path": "raw/2026/249/05/PSYCMM0010.2026249binRTCM3",
+        "bytes": 214990,
+        "sha256": "c7ce2b73f69b02b49adf0b4d2941a0d2b31e9bd8e3a63d4d59d4482d615c0096"
+      },
+      {
+        "path": "raw/2026/249/06/PSYCMM0010.2026249binRTCM3",
+        "bytes": 216494,
+        "sha256": "bd982eb9f9ec3eba8530f6d02d3be0ed9606c8cb3a40d3adfa8881ce76baf551"
+      },
+      {
+        "path": "raw/2026/249/07/PSYCMM0010.2026249binRTCM3",
+        "bytes": 215986,
+        "sha256": "a1496b1f9f909c7fba857272ad2899ff9ea0c730cb85e4b883289afdde53fcde"
+      },
+      {
+        "path": "raw/2026/249/08/PSYCMM0010.2026249binRTCM3",
+        "bytes": 203667,
+        "sha256": "f5dee865f6e4f8f797cdfa32a83482c5f36ab24edc073246e8a9317d67add9c8"
+      },
+      {
+        "path": "raw/2026/249/09/PSYCMM0010.2026249binRTCM3",
+        "bytes": 206644,
+        "sha256": "0e9f65ad044adcf898557704afa17bf0d3ee15adbfd9eced7b7c320d393e2e68"
+      },
+      {
+        "path": "raw/2026/249/10/PSYCMM0010.2026249binRTCM3",
+        "bytes": 207040,
+        "sha256": "24b74312681f56908c8067c4abf4dad8341a5981f326cee4f0bc9b7cf957a9cf"
+      },
+      {
+        "path": "raw/2026/249/11/PSYCMM0010.2026249binRTCM3",
+        "bytes": 211611,
+        "sha256": "432def4ba90c5a49a99a94c2b2833d23f98510c226e66b18d3e5603b73693b6f"
+      },
+      {
+        "path": "raw/2026/249/12/PSYCMM0010.2026249binRTCM3",
+        "bytes": 216684,
+        "sha256": "82ed2325dd023f16ea684eed8c8564a0411384c2327795cb85047f237b3702a7"
+      },
+      {
+        "path": "raw/2026/249/13/PSYCMM0010.2026249binRTCM3",
+        "bytes": 218990,
+        "sha256": "0f893836290febc9f116eeb791cc5f3efd5d17286800db5b0f27fb675252c3fd"
+      },
+      {
+        "path": "raw/2026/249/14/PSYCMM0010.2026249binRTCM3",
+        "bytes": 221068,
+        "sha256": "c20900f283fbd1b4cd898f9f3f7111b9cf80f52f37e38e4c132a96fe60de6825"
+      },
+      {
+        "path": "raw/2026/249/15/PSYCMM0010.2026249binRTCM3",
+        "bytes": 229617,
+        "sha256": "17ae8eed22ac5dc297293f8f993f2363720436a4fb82ad1458711266368cb562"
+      },
+      {
+        "path": "raw/2026/249/16/PSYCMM0010.2026249binRTCM3",
+        "bytes": 216343,
+        "sha256": "71234a89d46e732fdb5711fe4d8552c51b5ef5ef493fa4d070847a9f87683d07"
+      },
+      {
+        "path": "raw/2026/249/17/PSYCMM0010.2026249binRTCM3",
+        "bytes": 214793,
+        "sha256": "c1efbb0cd1de877148ee2c83b5a5212916ffa19e9a41b7cab85159b65fab31aa"
+      },
+      {
+        "path": "raw/2026/249/18/PSYCMM0010.2026249binRTCM3",
+        "bytes": 202415,
+        "sha256": "ebfed6dfdc88a6794a3d73eebcfab74fa4337b1c19215b84a6c4741f2b8964d0"
+      },
+      {
+        "path": "raw/2026/249/19/PSYCMM0010.2026249binRTCM3",
+        "bytes": 210817,
+        "sha256": "41147890b444f205d7a40bb496297f01ee03aeff629fc39528a5bf729edd9ea9"
+      },
+      {
+        "path": "raw/2026/249/20/PSYCMM0010.2026249binRTCM3",
+        "bytes": 216174,
+        "sha256": "69857a9a0163197926636b545e2b08ad2040b05ed9bdf95571d36b25becd7237"
+      },
+      {
+        "path": "raw/2026/249/21/PSYCMM0010.2026249binRTCM3",
+        "bytes": 217152,
+        "sha256": "d391243120877ef6e28b4b247656a1e1106ea6a96a825aa2551db571871989c3"
+      },
+      {
+        "path": "raw/2026/249/22/PSYCMM0010.2026249binRTCM3",
+        "bytes": 212834,
+        "sha256": "b55323ee7d66c6ba22d3217d3d47cc342a5fd8ddd560ecb075b80ed3470631e9"
+      },
+      {
+        "path": "raw/2026/249/23/PSYCMM0010.2026249binRTCM3",
+        "bytes": 206854,
+        "sha256": "90aadef7fccbf7f7c78622e6446daa56cf1f8574710ef522bcd14b84651a976a"
+      },
+      {
+        "path": "raw/2026/250/00/PSYCMM0010.2026250binRTCM3",
+        "bytes": 209441,
+        "sha256": "6ca90c11eac0e30181648ad3ff3fd2df6d5455276cc284a72dd27967aabf0eed"
+      }
+    ]
+  },
+  {
+    "bytes": 4999966,
+    "sha256": "61c8cea18ea30f0dcffdbf27dd94ed7647184c962a295988e4b75546f3805f54",
+    "frames": 50945,
+    "crc_failures": 0,
+    "skipped_bytes": 0,
+    "trailing_bytes": 0,
+    "message_types": {
+      "1074": 5988,
+      "1084": 5988,
+      "1094": 5988,
+      "1114": 5988,
+      "1124": 5988,
+      "1005": 5988,
+      "1006": 5988,
+      "1033": 5987,
+      "1019": 651,
+      "1020": 406,
+      "1042": 815,
+      "1044": 129,
+      "1045": 513,
+      "1046": 528
+    },
+    "msm_epochs": {
+      "1074": {
+        "count": 5988,
+        "first_ms": 30000,
+        "last_ms": 89850000,
+        "intervals_ms": {
+          "15000": 5986,
+          "30000": 1
+        }
+      },
+      "1084": {
+        "count": 5988,
+        "first_ms": 10812000,
+        "last_ms": 148449728,
+        "intervals_ms": {
+          "15000": 5985,
+          "30000": 1,
+          "47832728": 1
+        }
+      },
+      "1094": {
+        "count": 5988,
+        "first_ms": 30000,
+        "last_ms": 89850000,
+        "intervals_ms": {
+          "15000": 5986,
+          "30000": 1
+        }
+      },
+      "1114": {
+        "count": 5988,
+        "first_ms": 30000,
+        "last_ms": 89850000,
+        "intervals_ms": {
+          "15000": 5986,
+          "30000": 1
+        }
+      },
+      "1124": {
+        "count": 5988,
+        "first_ms": 16000,
+        "last_ms": 89836000,
+        "intervals_ms": {
+          "15000": 5986,
+          "30000": 1
+        }
+      }
+    },
+    "station_ids": [
+      0
+    ],
+    "ecef": [
+      [
+        -1936268.7794,
+        5104057.9877,
+        3287902.9041
+      ]
+    ],
+    "station": "PSYCMM0010",
+    "target_bytes": 5000000,
+    "path": "/Users/wfu/Documents/works/navfirst/code/nav-whu/dmonitor-java-lib/target/report-work/PSYCMM0010-5000000.rtcm3",
+    "sources": [
+      {
+        "path": "raw/2026/249/00/PSYCMM0010.2026249binRTCM3",
+        "bytes": 212784,
+        "sha256": "8b786962ce46b19da28bd0ad32b04b3e5955d005355c7bd922bc131e86f1cc3c"
+      },
+      {
+        "path": "raw/2026/249/01/PSYCMM0010.2026249binRTCM3",
+        "bytes": 212194,
+        "sha256": "5c3e8b268ecc26e850185be38297661fcda53baf3e06150bf13ef33cb4397c6e"
+      },
+      {
+        "path": "raw/2026/249/02/PSYCMM0010.2026249binRTCM3",
+        "bytes": 200772,
+        "sha256": "256a745eb407b8f0bf64303f8a13b4bfc15e805fc3a2f56473c2adab61a456f5"
+      },
+      {
+        "path": "raw/2026/249/03/PSYCMM0010.2026249binRTCM3",
+        "bytes": 207458,
+        "sha256": "515470ab102ef90032d164ee07f0d2d33dd8d6f1b6e8ea5751217f4901db51bb"
+      },
+      {
+        "path": "raw/2026/249/04/PSYCMM0010.2026249binRTCM3",
+        "bytes": 217140,
+        "sha256": "1927783e339a6931c8806b24f8b255d774309fd558b206bfab9e0cf991269378"
+      },
+      {
+        "path": "raw/2026/249/05/PSYCMM0010.2026249binRTCM3",
+        "bytes": 214990,
+        "sha256": "c7ce2b73f69b02b49adf0b4d2941a0d2b31e9bd8e3a63d4d59d4482d615c0096"
+      },
+      {
+        "path": "raw/2026/249/06/PSYCMM0010.2026249binRTCM3",
+        "bytes": 216494,
+        "sha256": "bd982eb9f9ec3eba8530f6d02d3be0ed9606c8cb3a40d3adfa8881ce76baf551"
+      },
+      {
+        "path": "raw/2026/249/07/PSYCMM0010.2026249binRTCM3",
+        "bytes": 215986,
+        "sha256": "a1496b1f9f909c7fba857272ad2899ff9ea0c730cb85e4b883289afdde53fcde"
+      },
+      {
+        "path": "raw/2026/249/08/PSYCMM0010.2026249binRTCM3",
+        "bytes": 203667,
+        "sha256": "f5dee865f6e4f8f797cdfa32a83482c5f36ab24edc073246e8a9317d67add9c8"
+      },
+      {
+        "path": "raw/2026/249/09/PSYCMM0010.2026249binRTCM3",
+        "bytes": 206644,
+        "sha256": "0e9f65ad044adcf898557704afa17bf0d3ee15adbfd9eced7b7c320d393e2e68"
+      },
+      {
+        "path": "raw/2026/249/10/PSYCMM0010.2026249binRTCM3",
+        "bytes": 207040,
+        "sha256": "24b74312681f56908c8067c4abf4dad8341a5981f326cee4f0bc9b7cf957a9cf"
+      },
+      {
+        "path": "raw/2026/249/11/PSYCMM0010.2026249binRTCM3",
+        "bytes": 211611,
+        "sha256": "432def4ba90c5a49a99a94c2b2833d23f98510c226e66b18d3e5603b73693b6f"
+      },
+      {
+        "path": "raw/2026/249/12/PSYCMM0010.2026249binRTCM3",
+        "bytes": 216684,
+        "sha256": "82ed2325dd023f16ea684eed8c8564a0411384c2327795cb85047f237b3702a7"
+      },
+      {
+        "path": "raw/2026/249/13/PSYCMM0010.2026249binRTCM3",
+        "bytes": 218990,
+        "sha256": "0f893836290febc9f116eeb791cc5f3efd5d17286800db5b0f27fb675252c3fd"
+      },
+      {
+        "path": "raw/2026/249/14/PSYCMM0010.2026249binRTCM3",
+        "bytes": 221068,
+        "sha256": "c20900f283fbd1b4cd898f9f3f7111b9cf80f52f37e38e4c132a96fe60de6825"
+      },
+      {
+        "path": "raw/2026/249/15/PSYCMM0010.2026249binRTCM3",
+        "bytes": 229617,
+        "sha256": "17ae8eed22ac5dc297293f8f993f2363720436a4fb82ad1458711266368cb562"
+      },
+      {
+        "path": "raw/2026/249/16/PSYCMM0010.2026249binRTCM3",
+        "bytes": 216343,
+        "sha256": "71234a89d46e732fdb5711fe4d8552c51b5ef5ef493fa4d070847a9f87683d07"
+      },
+      {
+        "path": "raw/2026/249/17/PSYCMM0010.2026249binRTCM3",
+        "bytes": 214793,
+        "sha256": "c1efbb0cd1de877148ee2c83b5a5212916ffa19e9a41b7cab85159b65fab31aa"
+      },
+      {
+        "path": "raw/2026/249/18/PSYCMM0010.2026249binRTCM3",
+        "bytes": 202415,
+        "sha256": "ebfed6dfdc88a6794a3d73eebcfab74fa4337b1c19215b84a6c4741f2b8964d0"
+      },
+      {
+        "path": "raw/2026/249/19/PSYCMM0010.2026249binRTCM3",
+        "bytes": 210817,
+        "sha256": "41147890b444f205d7a40bb496297f01ee03aeff629fc39528a5bf729edd9ea9"
+      },
+      {
+        "path": "raw/2026/249/20/PSYCMM0010.2026249binRTCM3",
+        "bytes": 216174,
+        "sha256": "69857a9a0163197926636b545e2b08ad2040b05ed9bdf95571d36b25becd7237"
+      },
+      {
+        "path": "raw/2026/249/21/PSYCMM0010.2026249binRTCM3",
+        "bytes": 217152,
+        "sha256": "d391243120877ef6e28b4b247656a1e1106ea6a96a825aa2551db571871989c3"
+      },
+      {
+        "path": "raw/2026/249/22/PSYCMM0010.2026249binRTCM3",
+        "bytes": 212834,
+        "sha256": "b55323ee7d66c6ba22d3217d3d47cc342a5fd8ddd560ecb075b80ed3470631e9"
+      },
+      {
+        "path": "raw/2026/249/23/PSYCMM0010.2026249binRTCM3",
+        "bytes": 206854,
+        "sha256": "90aadef7fccbf7f7c78622e6446daa56cf1f8574710ef522bcd14b84651a976a"
+      },
+      {
+        "path": "raw/2026/250/00/PSYCMM0010.2026250binRTCM3",
+        "bytes": 209441,
+        "sha256": "6ca90c11eac0e30181648ad3ff3fd2df6d5455276cc284a72dd27967aabf0eed"
+      }
+    ]
+  },
+  {
+    "bytes": 2499942,
+    "sha256": "bf4b19479aabd7bb626ddb5f5eb65f74b9a7b05dc2a8a53e1e8dfa493864d01b",
+    "frames": 24766,
+    "crc_failures": 0,
+    "skipped_bytes": 0,
+    "trailing_bytes": 0,
+    "message_types": {
+      "1074": 2902,
+      "1084": 2901,
+      "1094": 2901,
+      "1114": 2901,
+      "1124": 2901,
+      "1005": 2901,
+      "1006": 2901,
+      "1033": 2901,
+      "1019": 319,
+      "1020": 195,
+      "1042": 440,
+      "1044": 57,
+      "1045": 271,
+      "1046": 275
+    },
+    "msm_epochs": {
+      "1074": {
+        "count": 2902,
+        "first_ms": 30000,
+        "last_ms": 43545000,
+        "intervals_ms": {
+          "15000": 2901
+        }
+      },
+      "1084": {
+        "count": 2901,
+        "first_ms": 10812000,
+        "last_ms": 54312000,
+        "intervals_ms": {
+          "15000": 2900
+        }
+      },
+      "1094": {
+        "count": 2901,
+        "first_ms": 30000,
+        "last_ms": 43530000,
+        "intervals_ms": {
+          "15000": 2900
+        }
+      },
+      "1114": {
+        "count": 2901,
+        "first_ms": 30000,
+        "last_ms": 43530000,
+        "intervals_ms": {
+          "15000": 2900
+        }
+      },
+      "1124": {
+        "count": 2901,
+        "first_ms": 16000,
+        "last_ms": 43516000,
+        "intervals_ms": {
+          "15000": 2900
+        }
+      }
+    },
+    "station_ids": [
+      0
+    ],
+    "ecef": [
+      [
+        -1936213.2186,
+        5104085.464,
+        3287878.1762
+      ]
+    ],
+    "station": "PSYCMM0009",
+    "target_bytes": 2500000,
+    "path": "/Users/wfu/Documents/works/navfirst/code/nav-whu/dmonitor-java-lib/target/report-work/PSYCMM0009-2500000.rtcm3",
+    "sources": [
+      {
+        "path": "raw/2026/249/00/PSYCMM0009.2026249binRTCM3",
+        "bytes": 218597,
+        "sha256": "4f334dadab3b7a209dd77e7e526e6188b9da433395415a590a7816ff1227d695"
+      },
+      {
+        "path": "raw/2026/249/01/PSYCMM0009.2026249binRTCM3",
+        "bytes": 217102,
+        "sha256": "9473cd53b2079ebf2403bdff9331e8b0d52edd4d78a127f0b4bf230455453af8"
+      },
+      {
+        "path": "raw/2026/249/02/PSYCMM0009.2026249binRTCM3",
+        "bytes": 211938,
+        "sha256": "4475bd14d3fa01664183ba98fcee9d649f9170e81b5566f081df5c966bba397f"
+      },
+      {
+        "path": "raw/2026/249/03/PSYCMM0009.2026249binRTCM3",
+        "bytes": 220738,
+        "sha256": "a857e3adbaec6a38ef776518caf7a92a65ea010de631aa150459d6f5e8b9380a"
+      },
+      {
+        "path": "raw/2026/249/04/PSYCMM0009.2026249binRTCM3",
+        "bytes": 223667,
+        "sha256": "b81c80dcb83d1bf4d34bc3d887cbac36e9ee057b061527c5288b33652847d44d"
+      },
+      {
+        "path": "raw/2026/249/05/PSYCMM0009.2026249binRTCM3",
+        "bytes": 224719,
+        "sha256": "bdc849285708b24fcdcd6a7fab30de6e353cb6fb713051e2995ccb3fc9776f33"
+      },
+      {
+        "path": "raw/2026/249/06/PSYCMM0009.2026249binRTCM3",
+        "bytes": 223794,
+        "sha256": "a019ba86927a7f582b4cf595813440e5d2decfadfbc8bc25a0b73d806ec96a81"
+      },
+      {
+        "path": "raw/2026/249/07/PSYCMM0009.2026249binRTCM3",
+        "bytes": 220782,
+        "sha256": "e90c4640eadcaec233a7f8823eef2f7bd5681b0733c4da8c31930c9046946147"
+      },
+      {
+        "path": "raw/2026/249/08/PSYCMM0009.2026249binRTCM3",
+        "bytes": 208789,
+        "sha256": "5cc46a0f805426652caaddcec154a86c6256fdc7dc93945caa138c2646ca10ee"
+      },
+      {
+        "path": "raw/2026/249/09/PSYCMM0009.2026249binRTCM3",
+        "bytes": 216117,
+        "sha256": "241363c19b9c6d35c0723dc07ebc49ce9bff989ac5dd0431e3b0209930054bc9"
+      },
+      {
+        "path": "raw/2026/249/10/PSYCMM0009.2026249binRTCM3",
+        "bytes": 219317,
+        "sha256": "dd364c83ee6f3ccd95bf22bc69be97acbee5b0fee772e96d0c94ca4c25bef6b9"
+      },
+      {
+        "path": "raw/2026/249/11/PSYCMM0009.2026249binRTCM3",
+        "bytes": 224878,
+        "sha256": "d5200d3afc9d5cbaf741f9964187a12646abd983e4db8842f370d1f0f46b6994"
+      },
+      {
+        "path": "raw/2026/249/12/PSYCMM0009.2026249binRTCM3",
+        "bytes": 223008,
+        "sha256": "11f403702a9e238ccd70a42d10239c5d111e801d992f5a8074d3ecc10cc87240"
+      },
+      {
+        "path": "raw/2026/249/13/PSYCMM0009.2026249binRTCM3",
+        "bytes": 224473,
+        "sha256": "f2558e783a2091789d88bdff269bc208b319fa7d3adddb6d14c7cbf16ec93a4f"
+      },
+      {
+        "path": "raw/2026/249/14/PSYCMM0009.2026249binRTCM3",
+        "bytes": 221488,
+        "sha256": "deeba944cc99bf7b798326473b634f20c3009c062f05dd9e9babf8d100bde6a5"
+      },
+      {
+        "path": "raw/2026/249/15/PSYCMM0009.2026249binRTCM3",
+        "bytes": 230568,
+        "sha256": "7702e94dddfbf06e1bbfeacb796f9bae383a39ef068eb51888005998b2653759"
+      },
+      {
+        "path": "raw/2026/249/16/PSYCMM0009.2026249binRTCM3",
+        "bytes": 218721,
+        "sha256": "0d7b605c79358b045fe95c43efce9f56d8fdf46231aff2720eecc30b9de3301a"
+      },
+      {
+        "path": "raw/2026/249/17/PSYCMM0009.2026249binRTCM3",
+        "bytes": 224625,
+        "sha256": "370c97b2d29d76f2d82cb85c99536b48df4a72afdfdd43569e949d720fd83e3a"
+      },
+      {
+        "path": "raw/2026/249/18/PSYCMM0009.2026249binRTCM3",
+        "bytes": 218042,
+        "sha256": "b2ac91f371523468963ed908c0c0f6fafa8d541d3684ff641aa8b7665831b7b1"
+      },
+      {
+        "path": "raw/2026/249/19/PSYCMM0009.2026249binRTCM3",
+        "bytes": 224563,
+        "sha256": "e67a364c6248de38b35ad291933ab9d86eebe19dfb92e2ecb07f154a15562f6a"
+      },
+      {
+        "path": "raw/2026/249/20/PSYCMM0009.2026249binRTCM3",
+        "bytes": 231960,
+        "sha256": "2f9b06c86657e520c6f06632d530ef7d30d44cb24edbf8cb7c1314d6014567cc"
+      },
+      {
+        "path": "raw/2026/249/21/PSYCMM0009.2026249binRTCM3",
+        "bytes": 231542,
+        "sha256": "089e4658367465b92d964dbe31ba8060b6171e86a19de9bd4ff01cbcc7d390a5"
+      },
+      {
+        "path": "raw/2026/249/22/PSYCMM0009.2026249binRTCM3",
+        "bytes": 222006,
+        "sha256": "945322c6a385cbbe8a7ab305a9e0bd540193934c1b9b1ba0e009c523fe287eec"
+      },
+      {
+        "path": "raw/2026/249/23/PSYCMM0009.2026249binRTCM3",
+        "bytes": 211298,
+        "sha256": "91d4eb090a85e93ed5b1dc36186f0df2d3d8884a92d5a272007abdbcd876fbc1"
+      }
+    ]
+  },
+  {
+    "bytes": 4999814,
+    "sha256": "01aeaf058ed2c067ba55af5a462fee743a02fc9f07886e2e30ac00f0debae885",
+    "frames": 48965,
+    "crc_failures": 0,
+    "skipped_bytes": 0,
+    "trailing_bytes": 0,
+    "message_types": {
+      "1074": 5743,
+      "1084": 5743,
+      "1094": 5743,
+      "1114": 5743,
+      "1124": 5742,
+      "1005": 5742,
+      "1006": 5742,
+      "1033": 5742,
+      "1019": 629,
+      "1020": 399,
+      "1042": 860,
+      "1044": 123,
+      "1045": 515,
+      "1046": 499
+    },
+    "msm_epochs": {
+      "1074": {
+        "count": 5743,
+        "first_ms": 30000,
+        "last_ms": 86175000,
+        "intervals_ms": {
+          "15000": 5741,
+          "30000": 1
+        }
+      },
+      "1084": {
+        "count": 5743,
+        "first_ms": 10812000,
+        "last_ms": 144774728,
+        "intervals_ms": {
+          "15000": 5740,
+          "30000": 1,
+          "47832728": 1
+        }
+      },
+      "1094": {
+        "count": 5743,
+        "first_ms": 30000,
+        "last_ms": 86175000,
+        "intervals_ms": {
+          "15000": 5741,
+          "30000": 1
+        }
+      },
+      "1114": {
+        "count": 5743,
+        "first_ms": 30000,
+        "last_ms": 86175000,
+        "intervals_ms": {
+          "15000": 5741,
+          "30000": 1
+        }
+      },
+      "1124": {
+        "count": 5742,
+        "first_ms": 16000,
+        "last_ms": 86146000,
+        "intervals_ms": {
+          "15000": 5740,
+          "30000": 1
+        }
+      }
+    },
+    "station_ids": [
+      0
+    ],
+    "ecef": [
+      [
+        -1936213.2186,
+        5104085.464,
+        3287878.1762
+      ]
+    ],
+    "station": "PSYCMM0009",
+    "target_bytes": 5000000,
+    "path": "/Users/wfu/Documents/works/navfirst/code/nav-whu/dmonitor-java-lib/target/report-work/PSYCMM0009-5000000.rtcm3",
+    "sources": [
+      {
+        "path": "raw/2026/249/00/PSYCMM0009.2026249binRTCM3",
+        "bytes": 218597,
+        "sha256": "4f334dadab3b7a209dd77e7e526e6188b9da433395415a590a7816ff1227d695"
+      },
+      {
+        "path": "raw/2026/249/01/PSYCMM0009.2026249binRTCM3",
+        "bytes": 217102,
+        "sha256": "9473cd53b2079ebf2403bdff9331e8b0d52edd4d78a127f0b4bf230455453af8"
+      },
+      {
+        "path": "raw/2026/249/02/PSYCMM0009.2026249binRTCM3",
+        "bytes": 211938,
+        "sha256": "4475bd14d3fa01664183ba98fcee9d649f9170e81b5566f081df5c966bba397f"
+      },
+      {
+        "path": "raw/2026/249/03/PSYCMM0009.2026249binRTCM3",
+        "bytes": 220738,
+        "sha256": "a857e3adbaec6a38ef776518caf7a92a65ea010de631aa150459d6f5e8b9380a"
+      },
+      {
+        "path": "raw/2026/249/04/PSYCMM0009.2026249binRTCM3",
+        "bytes": 223667,
+        "sha256": "b81c80dcb83d1bf4d34bc3d887cbac36e9ee057b061527c5288b33652847d44d"
+      },
+      {
+        "path": "raw/2026/249/05/PSYCMM0009.2026249binRTCM3",
+        "bytes": 224719,
+        "sha256": "bdc849285708b24fcdcd6a7fab30de6e353cb6fb713051e2995ccb3fc9776f33"
+      },
+      {
+        "path": "raw/2026/249/06/PSYCMM0009.2026249binRTCM3",
+        "bytes": 223794,
+        "sha256": "a019ba86927a7f582b4cf595813440e5d2decfadfbc8bc25a0b73d806ec96a81"
+      },
+      {
+        "path": "raw/2026/249/07/PSYCMM0009.2026249binRTCM3",
+        "bytes": 220782,
+        "sha256": "e90c4640eadcaec233a7f8823eef2f7bd5681b0733c4da8c31930c9046946147"
+      },
+      {
+        "path": "raw/2026/249/08/PSYCMM0009.2026249binRTCM3",
+        "bytes": 208789,
+        "sha256": "5cc46a0f805426652caaddcec154a86c6256fdc7dc93945caa138c2646ca10ee"
+      },
+      {
+        "path": "raw/2026/249/09/PSYCMM0009.2026249binRTCM3",
+        "bytes": 216117,
+        "sha256": "241363c19b9c6d35c0723dc07ebc49ce9bff989ac5dd0431e3b0209930054bc9"
+      },
+      {
+        "path": "raw/2026/249/10/PSYCMM0009.2026249binRTCM3",
+        "bytes": 219317,
+        "sha256": "dd364c83ee6f3ccd95bf22bc69be97acbee5b0fee772e96d0c94ca4c25bef6b9"
+      },
+      {
+        "path": "raw/2026/249/11/PSYCMM0009.2026249binRTCM3",
+        "bytes": 224878,
+        "sha256": "d5200d3afc9d5cbaf741f9964187a12646abd983e4db8842f370d1f0f46b6994"
+      },
+      {
+        "path": "raw/2026/249/12/PSYCMM0009.2026249binRTCM3",
+        "bytes": 223008,
+        "sha256": "11f403702a9e238ccd70a42d10239c5d111e801d992f5a8074d3ecc10cc87240"
+      },
+      {
+        "path": "raw/2026/249/13/PSYCMM0009.2026249binRTCM3",
+        "bytes": 224473,
+        "sha256": "f2558e783a2091789d88bdff269bc208b319fa7d3adddb6d14c7cbf16ec93a4f"
+      },
+      {
+        "path": "raw/2026/249/14/PSYCMM0009.2026249binRTCM3",
+        "bytes": 221488,
+        "sha256": "deeba944cc99bf7b798326473b634f20c3009c062f05dd9e9babf8d100bde6a5"
+      },
+      {
+        "path": "raw/2026/249/15/PSYCMM0009.2026249binRTCM3",
+        "bytes": 230568,
+        "sha256": "7702e94dddfbf06e1bbfeacb796f9bae383a39ef068eb51888005998b2653759"
+      },
+      {
+        "path": "raw/2026/249/16/PSYCMM0009.2026249binRTCM3",
+        "bytes": 218721,
+        "sha256": "0d7b605c79358b045fe95c43efce9f56d8fdf46231aff2720eecc30b9de3301a"
+      },
+      {
+        "path": "raw/2026/249/17/PSYCMM0009.2026249binRTCM3",
+        "bytes": 224625,
+        "sha256": "370c97b2d29d76f2d82cb85c99536b48df4a72afdfdd43569e949d720fd83e3a"
+      },
+      {
+        "path": "raw/2026/249/18/PSYCMM0009.2026249binRTCM3",
+        "bytes": 218042,
+        "sha256": "b2ac91f371523468963ed908c0c0f6fafa8d541d3684ff641aa8b7665831b7b1"
+      },
+      {
+        "path": "raw/2026/249/19/PSYCMM0009.2026249binRTCM3",
+        "bytes": 224563,
+        "sha256": "e67a364c6248de38b35ad291933ab9d86eebe19dfb92e2ecb07f154a15562f6a"
+      },
+      {
+        "path": "raw/2026/249/20/PSYCMM0009.2026249binRTCM3",
+        "bytes": 231960,
+        "sha256": "2f9b06c86657e520c6f06632d530ef7d30d44cb24edbf8cb7c1314d6014567cc"
+      },
+      {
+        "path": "raw/2026/249/21/PSYCMM0009.2026249binRTCM3",
+        "bytes": 231542,
+        "sha256": "089e4658367465b92d964dbe31ba8060b6171e86a19de9bd4ff01cbcc7d390a5"
+      },
+      {
+        "path": "raw/2026/249/22/PSYCMM0009.2026249binRTCM3",
+        "bytes": 222006,
+        "sha256": "945322c6a385cbbe8a7ab305a9e0bd540193934c1b9b1ba0e009c523fe287eec"
+      },
+      {
+        "path": "raw/2026/249/23/PSYCMM0009.2026249binRTCM3",
+        "bytes": 211298,
+        "sha256": "91d4eb090a85e93ed5b1dc36186f0df2d3d8884a92d5a272007abdbcd876fbc1"
+      }
+    ]
+  }
+]
