@@ -27,6 +27,11 @@ public class MonitorData {
     private String baseName;
 
     /**
+     * 解算窗口开始时间，格式 yyyy/MM/dd HH:mm:ss
+     */
+    private String startTime;
+
+    /**
      * 解算坐标时间
      */
     private String gpsTime;
@@ -50,6 +55,42 @@ public class MonitorData {
      * 天向坐标
      */
     private Double U;
+
+    /**
+     * 监测站 ECEF X，单位米
+     */
+    @Builder.Default
+    private Double X = 0D;
+
+    /**
+     * 监测站 ECEF Y，单位米
+     */
+    @Builder.Default
+    private Double Y = 0D;
+
+    /**
+     * 监测站 ECEF Z，单位米
+     */
+    @Builder.Default
+    private Double Z = 0D;
+
+    /**
+     * 监测站 WGS84 大地纬度，单位度
+     */
+    @Builder.Default
+    private Double B = 0D;
+
+    /**
+     * 监测站 WGS84 大地经度，单位度
+     */
+    @Builder.Default
+    private Double L = 0D;
+
+    /**
+     * 监测站 WGS84 椭球高，单位米；不是正常高
+     */
+    @Builder.Default
+    private Double H = 0D;
 
     /**
      * 解算状态
@@ -85,6 +126,11 @@ public class MonitorData {
      * 星历状态
      */
     private int navStatus;
+
+    /**
+     * 原生结果中的星历数量；不含此字段的旧格式为 0
+     */
+    private int navNum;
 
     /**
      * 监测站历元数量

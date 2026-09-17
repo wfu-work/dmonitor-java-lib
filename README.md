@@ -63,6 +63,7 @@ String startGMonitor(MonitorStreamInfo monitorInfo, String license);
 ```
 
 第一行是解算结果，第二行是错误信息。`MonitorService` 会自动拆分这两行并转换为 `MonitorData`。
+第一行当前为 **30 列**，在 `E N U` 后新增监测站 `X Y Z B L H`。错误信息可以包含多行，服务层保留第一行之后的完整内容。
 
 ## 推荐调用方式：MonitorService
 
@@ -108,6 +109,10 @@ public class DemoService {
 
         monitorService.setHandlerData(monitorData -> {
             System.out.println("解算结果: " + monitorData);
+            System.out.printf("XYZ(m): %.4f %.4f %.4f%n",
+                    monitorData.getX(), monitorData.getY(), monitorData.getZ());
+            System.out.printf("BLH(deg,deg,m): %.9f %.9f %.4f%n",
+                    monitorData.getB(), monitorData.getL(), monitorData.getH());
         });
 
         monitorService.startMonitor(task, "/path/to/license.lic");
@@ -138,7 +143,7 @@ public class DemoService {
 | `minFixedRate` | 最小固定率，例如 `0.75` |
 | `navSys` | 卫星系统聚合项，例如 `1,4,8,32` |
 | `bds` | 北斗频段开关；为 `0` 时会从 `navSys` 中移除 `32` |
-| `baseX/baseY/baseZ` | 基准站 ECEF 坐标，可不传，默认 `0` |
+| `baseX/baseY/baseZ` | 基准站 WGS84 ECEF 坐标，单位米；分别对应 `rb[0..2]`。未传按 `0` 处理，三项全零时新增 XYZ/BLH 为零 |
 | `outFile` | 底层算法输出文件路径，可不传 |
 
 `MonitorServiceImpl` 会做以下转换：
@@ -148,6 +153,17 @@ public class DemoService {
 - 将 `navSys` 字符串拆分求和后传给原生库。
 - `brdcBytes` 非空时自动补 `0` 结尾，避免底层按 C 字符串读取星历时越界。
 - 将数据流写入 JNA native memory，并填入 `MonitorStreamInfo` 的指针和长度字段。
+
+需要监测站绝对坐标时，在调用 `startMonitor` 前填入实际基准站 ECEF。例如下面的坐标来自
+2026/07/03 的 PSNMJC001 测试样本，其他测站必须替换成对应坐标：
+
+```java
+task.setBaseX(-1647115.6013);
+task.setBaseY(4602291.3375);
+task.setBaseZ(4085428.6662);
+```
+
+上面的快速开始示例未设置基准站坐标，因此回调中的 `getX()/getY()/getZ()/getB()/getL()/getH()` 均为 `0.0`。
 
 ## 直接调用 SO：MonitorLibrary
 
@@ -268,29 +284,98 @@ typedef struct GMonitorStreamInfo {
 <errMsg>
 ```
 
-`solBuf` 字段顺序：
+`solBuf` 为 30 个空白分隔字段，顺序如下：
 
 ```text
-endDate endTime lastGpsDate lastGpsTime dposMax dposAvg dposStd fixedRate roverEpochRate baseEpochRate E N U solStatus solutionType satNum roverSample baseSample roverObsNum baseObsNum fileStatus navStatus navNum offTime
+startDate startTime gpsDate gpsTime dposMax dposAvg dposStd fixedRate roverEpochRate baseEpochRate E N U X Y Z B L H solStatus solutionType satNum roverSample baseSample roverObsNum baseObsNum fileStatus navStatus navNum offTime
 ```
 
 通过 `MonitorService` 调用时，`MonitorDataService` 会把 `solBuf` 解析成 `MonitorData`，再通过 `HandlerDataInterface` 回调出去。
 
-## 测试
+| 列号（从 1 开始） | 原生字段 | Java 读取方式 / 含义 |
+| --- | --- | --- |
+| 1–2 | startDate startTime | `getStartTime()`，拼接为解算窗口开始时间 |
+| 3–4 | gpsDate gpsTime | `getGpsTime()`；`getLastObsTime()` 目前取相同值 |
+| 5–7 | dposMax dposAvg dposStd | `getDposmax()/getDposavg()/getDposstd()` |
+| 8–10 | fixedRate roverEpochRate baseEpochRate | 固定率、监测站及基准站历元完整率 |
+| 11–13 | E N U | `getE()/getN()/getU()`，东、北、天基线，米 |
+| 14–16 | X Y Z | `getX()/getY()/getZ()`，监测站 ECEF，米，原生文本保留 4 位小数 |
+| 17–18 | B L | `getB()/getL()`，WGS84 大地纬度、经度，度，9 位小数 |
+| 19 | H | `getH()`，WGS84 椭球高，米，4 位小数；不是正常高 |
+| 20–22 | solStatus solutionType satNum | 解算状态、质量类型、卫星数量 |
+| 23–24 | roverSample baseSample | 双站采样间隔 |
+| 25–26 | roverObsNum baseObsNum | 双站历元数量 |
+| 27–28 | fileStatus navStatus | 观测文件状态、星历状态及对应说明 |
+| 29 | navNum | `getNavNum()`，星历数量 |
+| 30 | offTime | `getOffTime()`，原生解算耗时文本 |
 
-测试类：
+转换在 Go 原生封装中完成，Java 按原值解析为 `Double`。XYZ 为基准站 ECEF 加上
+ENU 旋转得到的 ECEF 增量，BLH 表示同一监测站位置。输出小数位数不代表实际定位精度。
 
-```text
-src/test/java/com/navfirst/dmonitor/lib/DmonitorJavaLibApplicationTests.java
+- 未传基准站坐标或三项全零时，六个新增坐标字段均为 `0.0`；只有某个分量为零仍可转换。
+- 有效基线解且 ENU 为零时，监测站 XYZ 等于基准站 XYZ。
+- `Fixed` / `Float` 基线结果可转换；`NONE`、默认失败结果和 `Single`（SPP）的新增六列为零。
+  SPP 原有第 11–13 列为经纬高，不能按 ENU 基线理解。
+- 转换失败时原生库输出六个零，并在 `errMsg` 说明原因。调用方应结合状态、质量和错误信息判断可用性。
+
+### 同步解析与兼容性
+
+不需要调用原生库时，也可以直接解析第一行结果：
+
+```java
+MonitorDataService parser = new MonitorDataServiceImpl();
+MonitorData result = parser.handlerDataSync(task, solBuf, errMsg);
 ```
 
-当前 `testMonitor` 使用如下路径：
+对应类在 `com.navfirst.dmonitor.lib.services`、`.services.impl`、`.domains` 包中。
+`handlerDataSync` 和服务层回调共用同一解析逻辑，支持多个空格、制表符及首尾空白。
+
+- 支持新版 30 列，以及旧版 **Go 封装输出**的 23/24 列。旧版没有 XYZ/BLH 时补 `0.0`；23 列没有 `navNum` 时补 `0`。
+- 24 列按 `… solStatus solutionType satNum roverSample baseSample roverObsNum baseObsNum fileStatus navStatus navNum offTime` 解析。
+  Java 按该顺序读取采样间隔和后续统计量。
+- 带 `reserved/isMoved` 的底层 C 原始结果不属于此兼容契约。同为 24 列时无法仅凭长度区分，
+  不应把底层日志直接交给解析器；应使用 `startGMonitor` 返回的 Go 封装结果。
+- 空白结果返回 `null`、不触发回调。其他不支持的列数、非法数字及 `NaN/Infinity` 抛出
+  `RtkconvException`；数值错误包含列号与字段名，解析失败不触发回调。
+- 原生 `errMsg` 非空时完整保留；解析成功且有业务错误的结果仍会回调。
+
+升级时同步替换原生库和 Java SDK。手动按列号解析的业务代码需将 `solStatus` 及后续字段后移 6 位。
+新增 `MonitorData` 字段也会出现在对象序列化中；使用 Lombok 全参构造器的代码需重新编译，推荐使用 builder 或 getter。
+完整 Word/PDF 说明见 [开发指南](docs/DMonitor-Java-SDK开发指南.docx) 和 [PDF 开发指南](docs/DMonitor-Java-SDK开发指南.pdf)。
+
+本次真实数据回归同时修正了 Go 封装对底层 C 的 24 列结果的映射：`satNum` 后的
+`isMoved` 保留列被去掉，末尾缺少的 `navNum` 补零。先前带此错位的 30 列库与新版列数相同，
+Java 无法仅凭长度判断，因此必须使用本次配套更新的原生库。例如正确尾部为
+`Fixed 1 29 15 15 236 236 0 0 0 1.1s`，含义是双站采样间隔 15 秒、各 236 个历元、状态均为 0，星历数量未提供而补 0。
+
+## 测试
+
+纯解析测试不依赖原生库、RTCM 文件或许可证：
 
 ```text
-/Users/wfu/Downloads/nav/2026/BRDM1400.rnx
-/Users/wfu/Downloads/raw/2026/140/00/XPJZ01.2026140binRTCM3
-/Users/wfu/Downloads/raw/2026/140/00/XPJZ02.2026140binRTCM3
-/Users/wfu/Downloads/license-mini.lic
+./mvnw -Dtest=MonitorDataServiceImplTest test
+```
+
+覆盖 30 列坐标和完整字段映射、23/24 列兼容、六列零值、失败结果、回调、空白分隔、多行错误、异常列数及非有限数字。
+
+真实坐标回归测试使用 2026/07/03 02:00–03:00 的 PSNMJC001/002 样本，需要显式传入数据根目录和许可证：
+
+```bash
+./mvnw -Dtest=MonitorCoordinatesNativeTest \
+  -Ddmonitor.testDataRoot=/path/to/gnss \
+  -Ddmonitor.testLicense=/path/to/license.lic test
+```
+
+数据根目录中需包含 `nav/2026/BRDM1840.rnx` 及
+`raw/2026/184/02/PSNMJC001.2026184binRTCM3`、`PSNMJC002.2026184binRTCM3`。
+测试通过真实 `MonitorServiceImpl` 调用原生库，断言回调次数、时间、Fixed 状态、错误为空，以及有基准站时的 XYZ/BLH 和未传时的零值。
+未设置 `dmonitor.testDataRoot` 时此项跳过；显式启用后，夹具缺失或解算不符合预期会失败。
+
+现有 `DmonitorJavaLibApplicationTests.testMonitor` 使用如下本地样例路径：
+
+```text
+/Users/wfu/Downloads/GSSK01.2026210binRTCM3
+/Users/wfu/Downloads/license.lic
 ```
 
 运行：
@@ -299,7 +384,7 @@ src/test/java/com/navfirst/dmonitor/lib/DmonitorJavaLibApplicationTests.java
 ./mvnw test
 ```
 
-如果 RTCM3 或 license 文件不存在，`testMonitor` 会跳过，不会误调用原生库。BRDC 星历文件不存在时会传空。
+如果 RTCM3 或 license 文件不存在，`testMonitor` 会跳过。该旧样例使用同一 RTCM 文件作为两站及 BRDC 输入，仅供调用演示；坐标功能回归应使用上面的独立站点样本。
 
 ## 常见问题
 

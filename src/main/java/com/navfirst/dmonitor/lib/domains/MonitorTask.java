@@ -121,17 +121,17 @@ public class MonitorTask implements Serializable {
     private String extra;
 
     /**
-     * 基站x
+     * 基准站 WGS84 ECEF X，单位米；未设置时传 0
      */
     private Double baseX;
 
     /**
-     * 基站y
+     * 基准站 WGS84 ECEF Y，单位米；未设置时传 0
      */
     private Double baseY;
 
     /**
-     * 基站z
+     * 基准站 WGS84 ECEF Z，单位米；XYZ 全零时不输出监测站绝对坐标
      */
     private Double baseZ;
 
