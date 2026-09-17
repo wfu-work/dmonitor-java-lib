@@ -63,6 +63,9 @@ class DmonitorJavaLibApplicationTests {
                 .minFixedRate(0.75)
                 .navSys("1,4,8,32")
                 .bds(1)
+                .baseX(-1309751.587112681)
+                .baseY(5472824.978125266)
+                .baseZ(2993841.8372959215)
                 .build();
         this.monitorService.startMonitor(monitorTask, LICENSE_PATH);
     }
