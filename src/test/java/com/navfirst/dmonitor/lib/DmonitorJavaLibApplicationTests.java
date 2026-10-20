@@ -19,9 +19,9 @@ import static org.junit.jupiter.api.Assumptions.assumeTrue;
 @RequiredArgsConstructor(onConstructor = @__(@Autowired))
 class DmonitorJavaLibApplicationTests {
 
-    private static final Path BRDC_PATH = Path.of("/Users/wfu/Downloads/GSSK01.2026210binRTCM3");
-    private static final Path ROVER_PATH = Path.of("/Users/wfu/Downloads/GSSK01.2026210binRTCM3");
-    private static final Path BASE_PATH = Path.of("/Users/wfu/Downloads/GSSK01.2026210binRTCM3");
+    private static final Path BRDC_PATH = Path.of("/Users/wfu/Downloads/BRDM2930.rnx");
+    private static final Path ROVER_PATH = Path.of("/Users/wfu/Downloads/PSMGJC000.2026293binRTCM3");
+    private static final Path BASE_PATH = Path.of("/Users/wfu/Downloads/PSMGJC000.2026293binRTCM3");
     private static final String LICENSE_PATH = "/Users/wfu/Downloads/license.lic";
 
     private final MonitorService monitorService;
@@ -48,14 +48,14 @@ class DmonitorJavaLibApplicationTests {
         byte[] brdcBytes = Files.isRegularFile(BRDC_PATH) ? Files.readAllBytes(BRDC_PATH) : null;
         MonitorTask monitorTask = MonitorTask.builder()
                 .rtMode(3)
-                .timeStart("2026/07/29 04:00:00")
-                .timeEnd("2026/07/29 05:00:00")
+                .timeStart("2026/10/20 02:00:00")
+                .timeEnd("2026/10/20 03:00:00")
                 .sample(0)
                 .vrs(0)
                 .filterPeriod(7200)
                 .processInterval(600)
-                .roverName("GSSK01")
-                .baseName("GSSK01")
+                .roverName("PSMGJC000")
+                .baseName("PSMGJC000")
                 .brdcBytes(brdcBytes)
                 .roverBytes(Files.readAllBytes(ROVER_PATH))
                 .baseBytes(Files.readAllBytes(BASE_PATH))
@@ -63,11 +63,12 @@ class DmonitorJavaLibApplicationTests {
                 .minFixedRate(0.75)
                 .navSys("1,4,8,32")
                 .bds(1)
-                .baseX(-1309751.587112681)
-                .baseY(5472824.978125266)
-                .baseZ(2993841.8372959215)
+                .baseX(null)
+                .baseY(null)
+                .baseZ(null)
                 .build();
         this.monitorService.startMonitor(monitorTask, LICENSE_PATH);
+        while (true) {}
     }
 
 }
